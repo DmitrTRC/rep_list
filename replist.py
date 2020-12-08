@@ -1,8 +1,8 @@
 import requests
 username = input("Enter the github username:")
 request = requests.get('https://api.github.com/users/'+username+'/repos')
-json = request.json()
-for i in range(0,len(json)):
-  print("Project Number:",i+1)
-  print("Project Name:",json[i]['name'])
-  print("Project URL:",json[i]['svn_url'],"\n")
+response = request.json()
+for repo in range(0,len(json)):
+  print("Project Number:",repo +1, end=' ## ')
+  print("Project Name:",response[repo]['name'])
+  print("Project URL:",response [repo]['svn_url'],"\n")
